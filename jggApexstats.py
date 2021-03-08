@@ -10,9 +10,6 @@ class Legend:
 	def getName(self):
 		return self.name
 
-def getLegendKills(legend):
-	return legend.getKills()
-
 #setup
 APIKey_file = open("Apex.txt", "rt")
 APIKey = APIKey_file.read()
@@ -55,7 +52,7 @@ for legend in all_legend_names:
 	pass
 
 #sort based by kill count (descending)
-legend_data.sort(key= getLegendKills, reverse = True)
+legend_data.sort(key= lambda x: x.getKills(), reverse = True)
 #print name with formatting
 print("-----\r" + player_name + "\r-----")
 #print all legend data
